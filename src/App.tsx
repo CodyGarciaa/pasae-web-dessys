@@ -1,8 +1,39 @@
-import {Box, Flex, Icon, Button, ButtonGroup, Divider, BannerUpsell, BannerOverlay, BannerCallout, Layer, ModalAlert, Text, CompositeZIndex, FixedZIndex} from 'gestalt'
+import {Box, Flex, Button, ButtonGroup, Divider, Layer, ModalAlert, Text, CompositeZIndex, FixedZIndex, Image} from 'gestalt'
 import { Fragment, useState } from 'react';
+import { Slideshow } from './components/Slideshow';
+import PASAELogo from './assets/pasae_logo_color_transparent.png';
 
 const HEADER_ZINDEX = new FixedZIndex(10);
 const zIndex = new CompositeZIndex([HEADER_ZINDEX]);
+
+// Slideshow data
+const slides = [
+  {
+    title: "Slide 1",
+    description: "Empowering communities through sustainable development",
+    image: "https://pasae.studentorg.berkeley.edu/images/front_page/PASAE37.JPG"
+  },
+  {
+    title: "Slide 2",
+    description: "Creating lasting positive impact in underserved communities",
+    image: "https://pasae.studentorg.berkeley.edu/images/professionalism_fr.jpg"
+  },
+  {
+    title: "Slide 3",
+    description: "Join us in making a difference",
+    image: "https://pasae.studentorg.berkeley.edu/images/front_page/funnovation37.JPG"
+  },
+  {
+    title: "Slide 4",
+    description: "Join us in making a difference",
+    image: "https://pasae.studentorg.berkeley.edu/images/front_page/family37.jpg"
+  },
+  {
+    title: "Slide 5",
+    description: "Join us in making a difference",
+    image: "https://pasae.studentorg.berkeley.edu/images/front_page/get_involvedCORE37.jpg"
+  },
+];
 
 function App() {
   const [showComponent, setShowComponent] = useState(true);
@@ -16,15 +47,24 @@ function App() {
           justifyContent="center"
           width="100%"
         >
-          <Flex direction="column" gap={{ column: 4, row: 0 }}>
-            <Flex alignItems="center" justifyContent="start">
+          <Flex direction="column" gap={{ column: 4, row: 0 }} width="100%">
+            <Flex alignItems="center" justifyContent="between">
               {/* Header / Top Nav Bar */}
-              <Icon
-                accessibilityLabel=""
-                color="brandPrimary"
-                icon="pinterest"
-                size={32}
-              />
+              <Flex alignItems="center" justifyContent="center">
+                {/*<img src={PASAELogo} alt="PASAE Logo" height={32} /> */}
+                <Box height={200} width="100%">
+                  <Image
+                    alt=""
+                    color="#000"
+                    fit="cover"
+                    naturalHeight={1}
+                    naturalWidth={1}
+                    role="img"
+                    src="https://pasae.studentorg.berkeley.edu/images/front_page/funnovation37.JPG"
+                  />
+                </Box>
+                <Text>PASAE</Text>
+              </Flex>
               <ButtonGroup>
                 <Button
                   color="transparent"
@@ -44,11 +84,12 @@ function App() {
 
             <Box marginTop={4}>
               {/* Rest of Page */}
+              <Slideshow slides={slides} />
             </Box>
           </Flex>
         </Flex>
       </Box>
-      {showComponent ? (
+      {/* {showComponent ? (
         <Layer zIndex={zIndex}>
           <ModalAlert
             accessibilityModalLabel="Pinterest Rights disclaimer"
@@ -69,7 +110,7 @@ function App() {
             type="warning"
           >
             <Text>
-              As you’ll notice, the site may look familiar to Pinterest’s pages! That’s 
+              As you'll notice, the site may look familiar to Pinterest's pages! That's 
               because it was redesigned as a personal learning project using their 
               open-source Gestalt design system.
               <br />
@@ -79,7 +120,7 @@ function App() {
             </Text>
           </ModalAlert>
         </Layer>
-      ) : null}
+      ) : null} */}
     </Fragment>
   )
 }
