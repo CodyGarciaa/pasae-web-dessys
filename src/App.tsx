@@ -18,6 +18,7 @@ function App() {
         >
           <Flex direction="column" gap={{ column: 4, row: 0 }}>
             <Flex alignItems="center" justifyContent="start">
+              {/* Header / Top Nav Bar */}
               <Icon
                 accessibilityLabel=""
                 color="brandPrimary"
@@ -42,22 +43,7 @@ function App() {
             <Divider />
 
             <Box marginTop={4}>
-              <BannerCallout
-                iconAccessibilityLabel="Disclaimer"
-                message="As you’ll notice, the site may look familiar to Pinterest’s pages! That’s because it was redesigned as a personal learning project using their open-source Gestalt design system. It is not officially affiliated with or endorsed by Pinterest. This project was created purely for educational purposes to explore design systems in practice."
-                primaryAction={{
-                  accessibilityLabel: 'Proceed to website',
-                  label: 'Continue to site',
-                  role: 'button',
-                }}
-                secondaryAction={{
-                  accessibilityLabel: 'Bring to Gestalt page',
-                  label: 'Learn more',
-                  role: 'button',
-                }}
-                title="Disclaimer: Built with Gestalt"
-                type="info"
-              />
+              {/* Rest of Page */}
             </Box>
           </Flex>
         </Flex>
@@ -65,17 +51,17 @@ function App() {
       {showComponent ? (
         <Layer zIndex={zIndex}>
           <ModalAlert
-            accessibilityModalLabel="Pinterest disclaimer"
+            accessibilityModalLabel="Pinterest Rights disclaimer"
             heading="Disclaimer: Built with Gestalt"
             onDismiss={() => {}}
             primaryAction={{
-              accessibilityLabel: 'Proceed to website',
+              accessibilityLabel: 'Bring user to website',
               label: 'Continue to site',
               onClick: () => {setShowComponent(false)},
               role: 'button',
             }}
             secondaryAction={{
-              accessibilityLabel: 'Bring to Gestalt page',
+              accessibilityLabel: 'Bring user to Gestalt page',
               label: 'Learn more',
               href: 'https://gestalt.pinterest.systems/',
               role: 'link',
@@ -95,10 +81,6 @@ function App() {
         </Layer>
       ) : null}
     </Fragment>
-    
-    // <>
-    //   <BannerCallout message='test message' type='default' iconAccessibilityLabel='Pinterest disclaimer' title='DISCLAIMER' ></BannerCallout> //COME BACK ACESSIBILITY GUIDELINES
-    // </>
   )
 }
 
