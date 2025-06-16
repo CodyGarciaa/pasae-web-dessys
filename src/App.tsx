@@ -6,35 +6,6 @@ import PASAELogo from './assets/pasae_logo_color_transparent.png';
 const HEADER_ZINDEX = new FixedZIndex(10);
 const zIndex = new CompositeZIndex([HEADER_ZINDEX]);
 
-// Slideshow data
-const slides = [
-  {
-    title: "PASAE",
-    description: "Pilipinx Association of Scientists, Arcitects, and Engineers",
-    image: "https://pasae.studentorg.berkeley.edu/images/front_page/PASAE37.JPG"
-  },
-  {
-    title: "Professionalism",
-    description: "Network, Mentors, Resumes, Interview Prep",
-    image: "https://pasae.studentorg.berkeley.edu/images/professionalism_fr.jpg"
-  },
-  {
-    title: "Funnovation",
-    description: "Have Fun!",
-    image: "https://pasae.studentorg.berkeley.edu/images/front_page/funnovation37.JPG"
-  },
-  {
-    title: "Family",
-    description: "A Community",
-    image: "https://pasae.studentorg.berkeley.edu/images/front_page/family37.jpg"
-  },
-  {
-    title: "Get Involved!",
-    description: "It's easy!",
-    image: "https://pasae.studentorg.berkeley.edu/images/front_page/get_involvedCORE37.jpg"
-  },
-];
-
 function App() {
   const [showComponent, setShowComponent] = useState(true);
 
@@ -82,7 +53,7 @@ function App() {
 
             <Box marginTop={4}>
               {/* Rest of Page */}
-              <Slideshow slides={slides} />
+              <Slideshow />
             </Box>
           </Flex>
         </Flex>
