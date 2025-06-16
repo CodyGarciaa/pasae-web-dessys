@@ -1,4 +1,4 @@
-import {Box, Flex, Button, ButtonGroup, Divider, Layer, ModalAlert, Text, CompositeZIndex, FixedZIndex, Image} from 'gestalt'
+import {Box, Flex, Button, ButtonGroup, Divider, Layer, ModalAlert, Text, CompositeZIndex, FixedZIndex, Image, Heading} from 'gestalt'
 import { Fragment, useState } from 'react';
 import { Slideshow } from './components/Slideshow';
 import PASAELogo from './assets/pasae_logo_color_transparent.png';
@@ -9,28 +9,28 @@ const zIndex = new CompositeZIndex([HEADER_ZINDEX]);
 // Slideshow data
 const slides = [
   {
-    title: "Slide 1",
-    description: "Empowering communities through sustainable development",
+    title: "PASAE",
+    description: "Pilipinx Association of Scientists, Arcitects, and Engineers",
     image: "https://pasae.studentorg.berkeley.edu/images/front_page/PASAE37.JPG"
   },
   {
-    title: "Slide 2",
-    description: "Creating lasting positive impact in underserved communities",
+    title: "Professionalism",
+    description: "Network, Mentors, Resumes, Interview Prep",
     image: "https://pasae.studentorg.berkeley.edu/images/professionalism_fr.jpg"
   },
   {
-    title: "Slide 3",
-    description: "Join us in making a difference",
+    title: "Funnovation",
+    description: "Have Fun!",
     image: "https://pasae.studentorg.berkeley.edu/images/front_page/funnovation37.JPG"
   },
   {
-    title: "Slide 4",
-    description: "Join us in making a difference",
+    title: "Family",
+    description: "A Community",
     image: "https://pasae.studentorg.berkeley.edu/images/front_page/family37.jpg"
   },
   {
-    title: "Slide 5",
-    description: "Join us in making a difference",
+    title: "Get Involved!",
+    description: "It's easy!",
     image: "https://pasae.studentorg.berkeley.edu/images/front_page/get_involvedCORE37.jpg"
   },
 ];
@@ -51,19 +51,17 @@ function App() {
             <Flex alignItems="center" justifyContent="between">
               {/* Header / Top Nav Bar */}
               <Flex alignItems="center" justifyContent="center">
-                {/*<img src={PASAELogo} alt="PASAE Logo" height={32} /> */}
-                <Box height={200} width="100%">
+                <Box width={48} height={48}>
                   <Image
-                    alt=""
-                    color="#000"
-                    fit="cover"
+                    alt="PASAE Logo"
                     naturalHeight={1}
                     naturalWidth={1}
+                    fit="contain"
                     role="img"
-                    src="https://pasae.studentorg.berkeley.edu/images/front_page/funnovation37.JPG"
+                    src={PASAELogo}
                   />
                 </Box>
-                <Text>PASAE</Text>
+                <Heading size="600">PASAE</Heading>
               </Flex>
               <ButtonGroup>
                 <Button
