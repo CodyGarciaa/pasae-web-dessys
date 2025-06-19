@@ -15,7 +15,7 @@ interface CaptionPictureProps {
 }
 
 const CaptionPicture = ({ heading, buttonText, cards }: CaptionPictureProps) => (
-  <Flex direction="row" alignItems="center" justifyContent="between" gap={8}>
+  <Flex direction="row" alignItems="center" justifyContent="between" overflow="hidden" gap={8}>
     {/* Left: Text and Arrows */}
     <Box maxWidth={350}>
       <Heading size="700">{heading}</Heading>
@@ -48,7 +48,7 @@ const CaptionPicture = ({ heading, buttonText, cards }: CaptionPictureProps) => 
     {/* Right: Gallery of Cards */}
     <Box
       flex="grow"
-      overflow="auto"
+      overflow="hidden"
       id="caption-picture-gallery"
       dangerouslySetInlineStyle={{
         __style: { overflowX: 'auto', scrollBehavior: 'smooth' },
@@ -86,16 +86,6 @@ const CaptionPicture = ({ heading, buttonText, cards }: CaptionPictureProps) => 
               </Text>
             </Box>
             <Text size="300">{card.desc}</Text>
-            <Box marginTop={4}>
-              <Text color="subtle" weight="bold" size="200">
-                <a
-                  href={card.link}
-                  style={{ textDecoration: 'none', color: 'inherit' }}
-                >
-                  ↗ Read the full article
-                </a>
-              </Text>
-            </Box>
           </Box>
         ))}
       </Flex>

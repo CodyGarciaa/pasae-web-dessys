@@ -1,4 +1,4 @@
-import {Box, Flex, Button, ButtonGroup, Divider, Layer, ModalAlert, Text, CompositeZIndex, FixedZIndex, Image, Heading, IconButton} from 'gestalt'
+import {Box, Flex, Button, ButtonGroup, Divider, Layer, Text, CompositeZIndex, FixedZIndex, Image, Heading} from 'gestalt'
 import { Fragment, useState } from 'react';
 import { Slideshow } from './components/Slideshow';
 import PASAELogo from './assets/pasae_logo_color_transparent.png';
@@ -54,7 +54,7 @@ function App() {
 
             <Divider />
 
-            <Box marginTop={4}>
+            <Flex direction="column" alignItems="center" gap={4}>
               {/* Rest of Page */}
               <Slideshow />
               {/* Mission Section */}
@@ -72,7 +72,7 @@ function App() {
                 imageAlt="PASAE Selling Food At EAU Fa'22"
                 layout="image-left"
               />
-            </Box>
+            </Flex>
             {/* Blog Gallery Section */}
             <BlogGallerySection />
           </Flex>
