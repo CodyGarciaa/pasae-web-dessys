@@ -17,7 +17,7 @@ export function Slideshow() {
   }, []);
 
   return (
-    <Box position="relative" height={400} overflow="hidden">
+    <Box position="relative" height={450} overflow="hidden" width={800}>
       <Box position="relative" height="100%">
         {slides.map((slide, index) => {
           // Calculate the relative position to current slide
