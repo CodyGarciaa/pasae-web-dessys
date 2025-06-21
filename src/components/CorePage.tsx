@@ -21,11 +21,6 @@ function CorePage() {
                 imageSrc={'https://pasae.studentorg.berkeley.edu/img/core/core36.jpg'}  // You'll want to replace this with a different image
                 secondImageSrc={'https://pasae.studentorg.berkeley.edu/img/core/core35.png'}
             />
-            {/* <WelcomeSection
-                title="Welcome to PASAE!"
-                description="No matter where you are in your journey, PASAE is here to support your growth and success. Our organization brings together passionate individuals who share a commitment to leadership, service, and celebrating Filipino culture. Through our diverse programs and tight-knit community, we create opportunities for meaningful connections and personal development."
-                imageSrc={'https://pasae.studentorg.berkeley.edu/img/core/core36.jpg'}  // You'll want to replace this with a different image
-            /> */}
             
             {/* People Cards Section */}
             <Box padding={4}>
